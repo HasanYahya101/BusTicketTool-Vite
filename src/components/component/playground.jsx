@@ -21,7 +21,9 @@ const Playground = () => {
     const handleDownload = async () => {
         if (ticketRef.current) {
             try {
-                const canvas = await html2canvas(ticketRef.current);
+                const canvas = await html2canvas(ticketRef.current,
+                    { scale: 2, backgroundColor: null, logging: false, letterRendering: true, useCORS: true }
+                );
                 const image = canvas.toDataURL("image/png");
                 const link = document.createElement('a');
                 link.href = image;
@@ -104,9 +106,9 @@ const Playground = () => {
                                 <p className="text-xs text-gray-600">Please arrive 15 minutes before departure. Thank you for choosing SwiftRide Express!</p>
                             </div>
 
-                            <div className="mt-3 flex justify-center">
-                                <div className="bg-gray-100 px-4 py-1 rounded border border-black">
-                                    <p className="text-xs font-mono text-black">||||| |||| |||| ||||| ||||</p>
+                            <div className="mt-3 flex justify-center content-center">
+                                <div className="bg-gray-100 px-4 py-1 rounded border border-black content-center">
+                                    <p className="text-xs font-mono text-black text-center self-center">||||| |||| |||| ||||| ||||</p>
                                 </div>
                             </div>
                         </div>
