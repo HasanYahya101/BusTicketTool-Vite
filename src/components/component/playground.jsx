@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Bus, Download, Edit } from 'lucide-react';
+import { Bus, Download, Edit, ArrowRight } from 'lucide-react';
 import html2canvas from 'html2canvas';
+import { Button } from '../ui/button';
 
 const Playground = () => {
     const ticketRef = useRef(null);
@@ -66,6 +67,7 @@ const Playground = () => {
                         <p className="text-xs text-gray-600">Passenger</p>
                         {isEditing ? (
                             <input
+                                maxLength={18}
                                 type="text"
                                 name="passengerName"
                                 value={ticketData.passengerName}
@@ -76,10 +78,11 @@ const Playground = () => {
                             <p className="text-sm font-semibold text-black">{ticketData.passengerName}</p>
                         )}
                     </div>
-                    <div>
+                    <div className='ml-auto'>
                         <p className="text-xs text-gray-600">Date</p>
                         {isEditing ? (
                             <input
+                                maxLength={18}
                                 type="text"
                                 name="date"
                                 value={ticketData.date}
@@ -93,52 +96,60 @@ const Playground = () => {
                 </div>
 
                 <div className="flex justify-between items-center mb-4 bg-gray-100 p-3 rounded border border-black">
-                    <div>
+                    <div className='mr-auto'>
                         <p className="text-xs text-gray-600">From</p>
                         {isEditing ? (
                             <input
+                                maxLength={10}
                                 type="text"
                                 name="from"
                                 value={ticketData.from}
                                 onChange={handleChange}
-                                className="text-lg font-bold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600"
+                                className="text-lg font-bold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem]"
                             />
                         ) : (
                             <p className="text-lg font-bold text-black">{ticketData.from}</p>
                         )}
                         {isEditing ? (
                             <input
+                                maxLength={10}
                                 type="text"
                                 name="departureTime"
                                 value={ticketData.departureTime}
                                 onChange={handleChange}
-                                className="text-sm text-red-600 bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600"
+                                className="text-sm text-red-600 bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem]"
                             />
                         ) : (
                             <p className="text-sm text-red-600">{ticketData.departureTime}</p>
                         )}
                     </div>
-                    <Bus className="w-10 h-10 text-red-600" />
-                    <div>
+                    {!isEditing ? (
+                        <ArrowRight className="w-10 h-10 text-red-600 ml-auto mr-auto" />
+                    ) : (
+                        null
+                    )}
+                    <div className='ml-auto'>
                         <p className="text-xs text-gray-600">To</p>
                         {isEditing ? (
                             <input
+                                maxLength={10}
                                 type="text"
                                 name="to"
                                 value={ticketData.to}
                                 onChange={handleChange}
-                                className="text-lg font-bold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600"
+                                className="text-lg font-bold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem]"
                             />
                         ) : (
                             <p className="text-lg font-bold text-black">{ticketData.to}</p>
                         )}
                         {isEditing ? (
                             <input
+                                maxLength={10}
                                 type="text"
                                 name="arrivalTime"
                                 value={ticketData.arrivalTime}
                                 onChange={handleChange}
-                                className="text-sm text-red-600 bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600"
+                                className="text-sm text-red-600 bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem]"
                             />
                         ) : (
                             <p className="text-sm text-red-600">{ticketData.arrivalTime}</p>
@@ -152,11 +163,12 @@ const Playground = () => {
                             <p className="text-xs text-gray-600">{field.charAt(0).toUpperCase() + field.slice(1)}</p>
                             {isEditing ? (
                                 <input
+                                    maxLength={10}
                                     type="text"
                                     name={field}
                                     value={ticketData[field]}
                                     onChange={handleChange}
-                                    className="text-sm font-semibold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600"
+                                    className="text-sm font-semibold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[4rem]"
                                 />
                             ) : (
                                 <p className="text-sm font-semibold text-black">{ticketData[field]}</p>
@@ -177,28 +189,40 @@ const Playground = () => {
             </div>
             <div className="mt-4 flex justify-center space-x-4">
                 {isEditing ? (
-                    <button
+                    <Button
                         onClick={handleSave}
-                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex items-center transition duration-300"
+                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 flex items-center transition duration-300 rounded-md"
                     >
                         Save Changes
-                    </button>
+                    </Button>
                 ) : (
-                    <button
+                    <Button
                         onClick={handleEdit}
-                        className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded flex items-center transition duration-300"
+                        className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 flex items-center transition duration-300 rounded-md"
                     >
                         <Edit className="w-5 h-5 mr-2" />
                         Edit Ticket
-                    </button>
+                    </Button>
                 )}
-                <button
-                    onClick={handleDownload}
-                    className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded flex items-center transition duration-300"
-                >
-                    <Download className="w-5 h-5 mr-2" />
-                    Download Ticket
-                </button>
+                {isEditing ? (
+                    <Button
+                        disabled
+                        onClick={handleDownload}
+                        className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 flex items-center transition duration-300 rounded-md"
+                    >
+                        <Download className="w-5 h-5 mr-2" />
+                        Download Ticket
+                    </Button>
+                ) : (
+
+                    <Button
+                        onClick={handleDownload}
+                        className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 flex items-center transition duration-300 rounded-md"
+                    >
+                        <Download className="w-5 h-5 mr-2" />
+                        Download Ticket
+                    </Button>
+                )}
             </div>
         </div>
     );
