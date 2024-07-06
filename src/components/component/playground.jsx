@@ -72,7 +72,7 @@ const Playground = () => {
                                 name="passengerName"
                                 value={ticketData.passengerName}
                                 onChange={handleChange}
-                                className="text-sm font-semibold text-black border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem]"
+                                className="text-sm font-semibold text-black border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem] text-center"
                             />
                         ) : (
                             <p className="text-sm font-semibold text-black">{ticketData.passengerName}</p>
@@ -87,7 +87,7 @@ const Playground = () => {
                                 name="date"
                                 value={ticketData.date}
                                 onChange={handleChange}
-                                className="text-sm font-semibold text-black border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem]"
+                                className="text-sm font-semibold text-black border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem] text-center"
                             />
                         ) : (
                             <p className="text-sm font-semibold text-black">{ticketData.date}</p>
@@ -105,7 +105,7 @@ const Playground = () => {
                                 name="from"
                                 value={ticketData.from}
                                 onChange={handleChange}
-                                className="text-lg font-bold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem]"
+                                className="text-lg font-bold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem] text-center"
                             />
                         ) : (
                             <p className="text-lg font-bold text-black">{ticketData.from}</p>
@@ -117,7 +117,7 @@ const Playground = () => {
                                 name="departureTime"
                                 value={ticketData.departureTime}
                                 onChange={handleChange}
-                                className="text-sm text-red-600 bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem]"
+                                className="text-sm text-red-600 bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem] text-center"
                             />
                         ) : (
                             <p className="text-sm text-red-600">{ticketData.departureTime}</p>
@@ -137,7 +137,7 @@ const Playground = () => {
                                 name="to"
                                 value={ticketData.to}
                                 onChange={handleChange}
-                                className="text-lg font-bold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem]"
+                                className="text-lg font-bold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem] text-center"
                             />
                         ) : (
                             <p className="text-lg font-bold text-black">{ticketData.to}</p>
@@ -149,7 +149,7 @@ const Playground = () => {
                                 name="arrivalTime"
                                 value={ticketData.arrivalTime}
                                 onChange={handleChange}
-                                className="text-sm text-red-600 bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem]"
+                                className="text-sm text-red-600 bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[9rem] text-center"
                             />
                         ) : (
                             <p className="text-sm text-red-600">{ticketData.arrivalTime}</p>
@@ -168,7 +168,7 @@ const Playground = () => {
                                     name={field}
                                     value={ticketData[field]}
                                     onChange={handleChange}
-                                    className="text-sm font-semibold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[4rem]"
+                                    className="text-sm font-semibold text-black bg-transparent border-b border-gray-300 focus:outline-none focus:border-red-600 max-w-[4rem] text-center"
                                 />
                             ) : (
                                 <p className="text-sm font-semibold text-black">{ticketData[field]}</p>
