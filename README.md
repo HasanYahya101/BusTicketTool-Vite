@@ -17,7 +17,8 @@ This project was deployed to Github Pages and can be tested there. No servers or
 ![Screenshot 2024-07-07 014722](https://github.com/HasanYahya101/BusTicketTool-Vite/assets/118683092/cf9b2a83-f2d8-4a73-ae96-3e06d4492b31)
 ![Screenshot 2024-07-07 014733](https://github.com/HasanYahya101/BusTicketTool-Vite/assets/118683092/8bb2a273-2e90-4757-9f03-539447e3cde2)
 ![Screenshot 2024-07-07 014757](https://github.com/HasanYahya101/BusTicketTool-Vite/assets/118683092/4a2b85e4-2153-41e0-9dc4-7dd068cfda13)
-![Screenshot 2024-07-07 014816](https://github.com/HasanYahya101/BusTicketTool-Vite/assets/118683092/e0f06674-795f-4060-b245-969d97d94823)
+![image](https://github.com/HasanYahya101/BusTicketTool-Vite/assets/118683092/c74c0248-558e-4207-99c6-ad3d5faf76cd)
+
 
 ## React + Vite
 
