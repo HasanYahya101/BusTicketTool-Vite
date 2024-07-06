@@ -96,7 +96,7 @@ const Playground = () => {
                 </div>
 
                 <div className="flex justify-between items-center mb-4 bg-gray-100 p-3 rounded border border-black">
-                    <div className='mr-auto'>
+                    <div className='mr-auto ml-2'>
                         <p className="text-xs text-gray-600">From</p>
                         {isEditing ? (
                             <input
@@ -128,7 +128,7 @@ const Playground = () => {
                     ) : (
                         null
                     )}
-                    <div className='ml-auto'>
+                    <div className='ml-auto mr-2'>
                         <p className="text-xs text-gray-600">To</p>
                         {isEditing ? (
                             <input
