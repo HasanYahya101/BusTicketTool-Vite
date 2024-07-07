@@ -19,20 +19,19 @@ const Playground = () => {
     });
 
     const handleDownload = async () => {
-        if (ticketRef.current) {
-            try {
-                const canvas = await html2canvas(ticketRef.current,
-                    { scale: 2, backgroundColor: null, logging: false, letterRendering: true, useCORS: true }
-                );
-                const image = canvas.toDataURL("image/png");
-                const link = document.createElement('a');
-                link.href = image;
-                link.download = 'bus-ticket.png';
-                link.click();
-            } catch (error) {
-                console.error("Error generating image:", error);
-            }
-        }
+        const style = document.createElement('style');
+        document.head.appendChild(style);
+        style.sheet?.insertRule('body > div:last-child img { display: inline-block; }');
+
+        html2canvas(ticketRef.current
+            , { scale: 2, backgroundColor: null }
+        ).then(canvas => {
+            style.remove();
+            const link = document.createElement('a');
+            link.download = 'ticket.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        });
     };
 
     const handleEdit = () => {
